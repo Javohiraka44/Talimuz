@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ustoz yordamchisi — maktab, oʻqituvchi, ota-ona va oʻquvchi uchun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f6f3;--ink:#14231b;--mut:#546359;--card:#fff;--line:#d5dfd8;--pri:#1f6b4a;--pri-ink:#fff;--acc:#e8b923;--bad:#c0392b;--warn:#c98a0b;--ok:#1f7a4d;--soft:#e4efe8;--cr:#2b5c8a;--co:#1f6b4a;--cp:#b9770e;--cs:#7a4fb3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a14;--ink:#e7efe9;--mut:#9fb2a6;--card:#16251c;--line:#2a3d31;--pri:#4fb98a;--pri-ink:#07140d;--acc:#f0c94a;--bad:#ff8a7a;--warn:#f0c94a;--ok:#6fd6a2;--soft:#1d3226;--cr:#7fb2e5;--co:#6fd6a2;--cp:#f0b45a;--cs:#c1a3f0}}
+:root[data-theme="dark"]{--bg:#0f1a14;--ink:#e7efe9;--mut:#9fb2a6;--card:#16251c;--line:#2a3d31;--pri:#4fb98a;--pri-ink:#07140d;--acc:#f0c94a;--bad:#ff8a7a;--warn:#f0c94a;--ok:#6fd6a2;--soft:#1d3226;--cr:#7fb2e5;--co:#6fd6a2;--cp:#f0b45a;--cs:#c1a3f0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.55 Nunito,system-ui,Segoe UI,Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--pri);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--pri);color:var(--pri-ink);padding:.6rem 1rem}
+header a{color:inherit;text-decoration:none}.brand{font-weight:800;font-size:1.2rem}
+nav{display:flex;gap:.9rem;overflow-x:auto;margin-top:.3rem;font-weight:600;font-size:.88rem}nav a{flex:none;opacity:.85;padding:.2rem 0;border-bottom:3px solid transparent}nav a[aria-current="true"]{opacity:1;border-color:var(--acc)}
+main{max-width:820px;margin:0 auto;padding:1rem}
+h1{font-size:1.9rem;line-height:1.2;margin:.8rem 0 .5rem}h2{font-size:1.35rem;margin:.5rem 0 .25rem}.lead{color:var(--mut);max-width:60ch;margin:0 0 1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin:1rem 0}
+.role{display:block;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:10px;padding:1rem;color:inherit;text-decoration:none}
+.role b{display:block;font-size:1.1rem;color:var(--c)}.role span{color:var(--mut);font-size:.9rem}
+.r-r{--c:var(--cr)}.r-o{--c:var(--co)}.r-p{--c:var(--cp)}.r-s{--c:var(--cs)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin-bottom:1rem}.card h3{margin:0 0 .5rem;font-size:1.05rem}
+.btn{display:inline-block;background:var(--pri);color:var(--pri-ink);border:0;border-radius:8px;padding:.6rem 1rem;font:800 .9rem Nunito,sans-serif;cursor:pointer;text-decoration:none;margin:.4rem .4rem 0 0}.btn.alt{background:var(--soft);color:var(--ink)}
+input,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.5rem .6rem}
+label{display:block;font-weight:600;font-size:.85rem;margin:.5rem 0 .2rem}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.mut{color:var(--mut);font-size:.85rem}.note{border-left:4px solid var(--acc);padding:.3rem .8rem;background:var(--soft);border-radius:4px;font-size:.88rem}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+.rr{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:.4rem;margin-bottom:.8rem}.rr>.full{grid-column:1/-1}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line)}.bar i{display:block}
+.days{display:flex;gap:.4rem;flex-wrap:wrap}.days label{display:flex;gap:.3rem;align-items:center;margin:0;background:var(--soft);padding:.4rem .6rem;border-radius:8px}.days input{width:auto}
+.q{font-size:2.2rem;font-weight:800;text-align:center;margin:.5rem 0}.opts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.opts button{font:800 1.5rem Nunito,sans-serif;padding:1rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);cursor:pointer}
+.opts .ok{border-color:var(--ok)}.opts .no{border-color:var(--bad)}
+footer{max-width:820px;margin:0 auto;padding:0 1rem 2rem;color:var(--mut);font-size:.82rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<header>
+<a href="#bosh" class="brand">Ustoz yordamchisi</a>
+<nav aria-label="Boʻlimlar"><a href="#rahbar">Maktab rahbari</a><a href="#oqituvchi">Oʻqituvchi</a><a href="#ota-ona">Ota-ona</a><a href="#oquvchi">Oʻquvchi</a></nav>
+</header>
+<main>
+
+<section id="v-bosh">
+<h1>Boshlangʻich ta’lim: oʻqituvchiga vaqt, bolaga natija</h1>
+<p class="lead">Maktab rahbari, oʻqituvchi, ota-ona va oʻquvchi uchun bitta joy. Oʻzingizga tegishli sahifani tanlang.</p>
+<div class="grid">
+<a class="role r-r" href="#rahbar"><b>Maktab rahbari</b><span>Sinflar kesimida umumiy koʻrinish, ismlarsiz.</span></a>
+<a class="role r-o" href="#oqituvchi"><b>Oʻqituvchi</b><span>Dars rejasi, oʻqish diagnostikasi, sertifikat mashqi.</span></a>
+<a class="role r-p" href="#ota-ona"><b>Ota-ona</b><span>Uyda 10 daqiqada farzand bilan nima qilish mumkin.</span></a>
+<a class="role r-s" href="#oquvchi"><b>Oʻquvchi</b><span>Qiziqarli matematika mashqlari.</span></a>
+</div>
+<div class="card"><h3>Nega bu sayt kerak</h3>
+<ul><li>PIRLS 2021 boʻyicha 4-sinf oʻquvchilarining oʻqish natijasi 437 ball, xalqaro oʻrtacha esa 500.</li>
+<li>Jahon banki maʼlumotiga koʻra, 4-sinf oʻquvchilarining 30 foizdan koʻpi oʻz darajasidagi matnni tushunib oʻqiy olmaydi.</li>
+<li>Ayrim maktablarda bitta sinfda 40 nafargacha oʻquvchi oʻtiradi. Oʻqituvchi hujjatbozlikka ham vaqt sarflaydi.</li></ul>
+<p class="mut">Manbalar: IEA PIRLS 2021, Jahon banki ECA PIRLS tahlili, Kun.uz (2023), xalqtaliminfo.uz.</p></div>
+</section>
+
+<section id="v-rahbar" hidden>
+<h2>Maktab rahbari uchun</h2>
+<p class="lead">Oʻqituvchilar diagnostika natijasini sinf boʻyicha raqam sifatida beradi. Siz qaysi sinfga yordam kerakligini bir qarashda koʻrasiz. Bola ismlari kerak emas.</p>
+<div class="card">
+<div class="rr mut"><span>Sinf</span><span>Yordam kerak</span><span>Rivojlanmoqda</span><span>Maqsadda</span></div>
+<div id="rb"></div>
+<button class="btn alt" id="rbadd">Sinf qoʻshish</button>
+<p class="note" id="rbsum" style="margin-top:1rem"></p>
+</div>
+<div class="card"><h3>Metodik yordam uchun savollar</h3><ul><li>Qaysi sinflarda “yordam kerak” ulushi 40% dan yuqori?</li><li>Oʻqituvchilar eng koʻp qaysi hujjat va hisobotga vaqt sarflayapti?</li><li>Katta sinflarda guruhli ish uchun qoʻshimcha material kerakmi?</li></ul>
+<p class="mut">Bu sahifa nazorat uchun emas, yordam rejalash uchun. Raqamlar faqat sizning qurilmangizda saqlanadi.</p></div>
+</section>
+
+<section id="v-oqituvchi" hidden>
+<h2>Oʻqituvchi uchun</h2>
+<p class="lead">Ish vositalari alohida sahifada. Kerakli boʻlimga toʻgʻridan-toʻgʻri oʻting.</p>
+<div class="grid">
+<a class="role r-o" href="oqituvchi.html#hujjat"><b>Hujjat va reja</b><span>Dars rejasi qoralamasi bir daqiqada.</span></a>
+<a class="role r-o" href="oqituvchi.html#oqish"><b>Oʻqish diagnostikasi</b><span>Soʻz/daqiqa va guruhlarga ajratish.</span></a>
+<a class="role r-o" href="oqituvchi.html#sertifikat"><b>Sertifikat tayyorlov</b><span>Mashq savollari izohlar bilan.</span></a>
+<a class="role r-o" href="oqituvchi.html#sorovnoma"><b>Soʻrovnoma</b><span>Sizga qaysi yordam kerakligini ayting.</span></a>
+</div>
+</section>
+
+<section id="v-ota-ona" hidden>
+<h2>Ota-onalar uchun</h2>
+<p class="lead">Kuniga 10 daqiqa yetarli. Farzandingiz sinfini tanlang.</p>
+<div class="card"><label for="pg">Sinf</label><select id="pg"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+<ul id="pact"></ul></div>
+<div class="card"><h3>Bu hafta oʻqiganmiz</h3><div class="days" id="pdays"></div><p class="mut" id="pcnt"></p>
+<button class="btn alt" id="preset">Haftani yangilash</button></div>
+<div class="card"><h3>Oʻqituvchiga savol bering</h3><ul><li>Farzandim hozir qaysi darajada oʻqiyapti?</li><li>Uyda qaysi koʻnikma ustida ishlaymiz?</li><li>Keyingi oyda qanday natijani kutish mumkin?</li></ul>
+<p class="mut">Farzandingizni boshqalar bilan solishtirmang. Avval yutugʻini ayting, soʻng birga keyingi qadamni belgilang.</p></div>
+</section>
+
+<section id="v-oquvchi" hidden>
+<h2>Oʻquvchi uchun</h2>
+<p class="lead">10 ta misol. Xato qilsang qoʻrqma, oʻrganish uchun shu yerdamiz.</p>
+<div class="card" id="game"></div>
+</section>
+
+</main>
+<footer>Gʻoya muallifi: Şuhratjonova Yasmına. Maʼlumotlar faqat qurilmangizda saqlanadi, reklama va tashqi chat yoʻq.</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const st={get(k,d){try{const v=localStorage.getItem('uyh_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('uyh_'+k,JSON.stringify(v))}catch(e){}}};
+function show(n){if(!$('#v-'+n))n='bosh';$$('section').forEach(s=>s.hidden=s.id!=='v-'+n);$$('nav a').forEach(a=>a.setAttribute('aria-current',String(a.hash==='#'+n)));scrollTo(0,0)}
+addEventListener('hashchange',()=>show(location.hash.slice(1)));
+
+/* Maktab rahbari */
+let RB=st.get('rb',[{n:'1-sinf',y:6,r:10,m:14}]);
+function rbDraw(){$('#rb').innerHTML=RB.map((x,i)=>`<div class="rr"><input data-i="${i}" data-k="n" value="${String(x.n).replace(/"/g,'&quot;')}" aria-label="Sinf nomi">`+['y','r','m'].map(k=>`<input type="number" min="0" data-i="${i}" data-k="${k}" value="${x[k]}" aria-label="${k}">`).join('')+`<div class="bar full" id="b${i}"></div><span class="mut full" id="f${i}"></span><button class="btn alt" data-del="${i}">Oʻchirish</button></div>`).join('');rbCalc()}
+function rbCalc(){let T=[0,0,0],flag=[];RB.forEach((x,i)=>{const s=x.y+x.r+x.m,p=k=>s?x[k]/s*100:0;$('#b'+i).innerHTML=`<i style="width:${p('y')}%;background:var(--bad)"></i><i style="width:${p('r')}%;background:var(--warn)"></i><i style="width:${p('m')}%;background:var(--ok)"></i>`;
+ const hi=s&&p('y')>=40;$('#f'+i).textContent=s?`Yordam kerak: ${Math.round(p('y'))}%${hi?' · metodik yordam ustuvor':''}`:'';if(hi)flag.push(x.n);T[0]+=x.y;T[1]+=x.r;T[2]+=x.m});
+ const s=T[0]+T[1]+T[2];$('#rbsum').textContent=s?`Jami ${s} oʻquvchi: yordam kerak ${T[0]}, rivojlanmoqda ${T[1]}, maqsadda ${T[2]}.${flag.length?' Ustuvor: '+flag.join(', ')+'.':''}`:'Raqam kiriting.'}
+$('#rb').oninput=e=>{const t=e.target,i=+t.dataset.i,k=t.dataset.k;if(isNaN(i))return;RB[i][k]=k==='n'?t.value:Math.max(0,+t.value||0);st.set('rb',RB);rbCalc()};
+$('#rb').onclick=e=>{const b=e.target.closest('[data-del]');if(!b)return;RB.splice(+b.dataset.del,1);st.set('rb',RB);rbDraw()};
+$('#rbadd').onclick=()=>{RB.push({n:'Yangi sinf',y:0,r:0,m:0});st.set('rb',RB);rbDraw()};
+
+/* Ota-ona */
+const ACT={1:['Kuniga 3–4 ta harf yoki boʻginni birga ayting va ulardan soʻz tuzing.','Rasmli kitobni birga koʻring, bola rasmga qarab hikoya qilsin.','Bola oʻqiyotganda barmogʻi bilan soʻzni koʻrsatib borsin.'],
+2:['Qisqa matnni navbat bilan oʻqing: bir gapni siz, bir gapni bola.','Oʻqigandan soʻng “Kim? Nima qildi?” savollarini bering.','Notanish soʻzni gap ichidan birga topib, maʼnosini tushuntiring.'],
+3:['Bola 5 daqiqa ovoz chiqarib oʻqisin, soʻng oʻqiganini oʻz soʻzi bilan aytib bersin.','Matn tugagach “Nima uchun?” savolini bering.','Haftada bir kitobni oʻzi tanlashiga imkon bering.'],
+4:['Matnning asosiy fikrini bir gapda aytishini soʻrang.','Oʻqigan kitobi haqida 3 gapli fikr yozsin.','Oʻqiganini oila aʼzosiga tavsiya qilib bersin.']};
+const DY=['Du','Se','Ch','Pa','Ju','Sh','Ya'];
+function pAct(){$('#pact').innerHTML=ACT[$('#pg').value].map(x=>`<li>${x}</li>`).join('')}
+function pDays(){const d=st.get('days',[0,0,0,0,0,0,0]);$('#pdays').innerHTML=DY.map((n,i)=>`<label><input type="checkbox" data-d="${i}" ${d[i]?'checked':''}> ${n}</label>`).join('');$('#pcnt').textContent=`${d.filter(Boolean).length}/7 kun. Har kuni 10 daqiqa katta natija beradi.`}
+$('#pg').onchange=pAct;
+$('#pdays').onchange=e=>{const d=st.get('days',[0,0,0,0,0,0,0]);d[+e.target.dataset.d]=e.target.checked?1:0;st.set('days',d);pDays()};
+$('#preset').onclick=()=>{st.set('days',[0,0,0,0,0,0,0]);pDays()};
+
+/* Oʻquvchi: matematika mashqi */
+const r=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+let G={n:0,s:0,q:null,lv:'a'};
+function mk(lv){let a,b,op,ans;if(lv==='a'){a=r(10,60);b=r(2,40);if(Math.random()<.5){op='+';ans=a+b}else{if(b>a)[a,b]=[b,a];op='−';ans=a-b}}else if(lv==='o'){a=r(2,9);b=r(2,9);op='×';ans=a*b}else{b=r(2,9);ans=r(2,9);a=b*ans;op='÷'}
+ const S=new Set([ans]);while(S.size<4){const d=ans+r(-5,5);if(d>=0)S.add(d)}return{t:`${a} ${op} ${b} = ?`,ans,o:shuf([...S])}}
+function gStart(){$('#game').innerHTML='<h3>Darajani tanla</h3><button class="btn" data-lv="a">Qoʻshish va ayirish</button><button class="btn" data-lv="o">Koʻpaytirish</button><button class="btn" data-lv="q">Boʻlish</button>'}
+function gNext(){if(G.n>=10){const m=G.s>=9?'Ajoyib, zoʻr natija!':G.s>=6?'Barakalla, yaxshi!':'Yana mashq qilsang, albatta yaxshilanadi!';$('#game').innerHTML=`<div class="q">${G.s} / 10</div><p style="text-align:center">${m}</p><button class="btn" id="again">Qayta oʻynash</button>`;$('#again').onclick=gStart;return}
+ G.q=mk(G.lv);$('#game').innerHTML=`<p class="mut">${G.n+1} / 10</p><div class="q">${G.q.t}</div><div class="opts">`+G.q.o.map(o=>`<button data-o="${o}">${o}</button>`).join('')+'</div><p id="gfb" style="text-align:center;min-height:3rem"></p>'}
+$('#game').onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.lv){G={n:0,s:0,q:null,lv:b.dataset.lv};gNext();return}
+ if(b.id==='gnext'){G.n++;gNext();return}
+ if(b.dataset.o===undefined)return;const ok=+b.dataset.o===G.q.ans;$$('.opts button').forEach(x=>{x.disabled=true;if(+x.dataset.o===G.q.ans)x.classList.add('ok')});if(!ok)b.classList.add('no');else G.s++;
+ $('#gfb').innerHTML=(ok?'Barakalla!':`Toʻgʻrisi: ${G.q.ans}. Hechqisi yoʻq!`)+' <button class="btn" id="gnext">Keyingi</button>'};
+
+const tg=window.Telegram&&Telegram.WebApp;if(tg){try{tg.ready();tg.expand();const sp=tg.initDataUnsafe&&tg.initDataUnsafe.start_param;if(sp&&!location.hash)location.hash=sp}catch(e){}}
+rbDraw();pAct();pDays();gStart();show(location.hash.slice(1));
+</script>
+</body>
+</html>
